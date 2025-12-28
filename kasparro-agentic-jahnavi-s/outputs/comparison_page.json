@@ -1,0 +1,27 @@
+{
+  "page_type": "Comparison",
+  "comparison": {
+    "product_a": {
+      "name": "GlowBoost Vitamin C Serum",
+      "ingredients": [
+        "Vitamin C",
+        "Hyaluronic Acid"
+      ],
+      "benefits": [
+        "Brightening",
+        "Fades dark spots"
+      ],
+      "price": 699
+    },
+    "product_b": {
+      "name": "RadiantGlow Vitamin C Serum",
+      "key_ingredients": [
+        "Vitamin C"
+      ],
+      "benefits": [
+        "Brightening"
+      ],
+      "price": 599
+    }
+  }
+}

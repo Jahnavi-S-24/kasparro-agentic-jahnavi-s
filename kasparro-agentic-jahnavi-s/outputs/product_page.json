@@ -1,0 +1,26 @@
+{
+  "page_type": "Product",
+  "overview": {
+    "name": "GlowBoost Vitamin C Serum",
+    "concentration": "10% Vitamin C",
+    "skin_type": [
+      "Oily",
+      "Combination"
+    ]
+  },
+  "benefits": {
+    "benefits": [
+      "Brightening",
+      "Fades dark spots"
+    ]
+  },
+  "usage": {
+    "how_to_use": "Apply 2\u00e2\u20ac\u201c3 drops in the morning before sunscreen"
+  },
+  "safety": {
+    "side_effects": "Mild tingling for sensitive skin"
+  },
+  "price": {
+    "price": 699
+  }
+}
