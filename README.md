@@ -1,50 +1,61 @@
 # Kasparro Applied AI Engineer Assignment
 
-This repository contains a modular agentic multi-agent content generation system built as part of the Kasparro Applied AI Engineer challenge.
+This repository contains a modular **Agentic AI-based multi-agent content generation system** built as part of the Kasparro Applied AI Engineer challenge.
 
 ## Project Overview
+The system takes structured product data as input and automatically generates multiple types of machine-readable content using an agentic, multi-agent architecture.
 
-The system takes structured product data as input and automatically generates multiple types of structured content using a true multi-agent architecture.  
-The objective is to demonstrate autonomous agents coordinated through orchestration rather than sequential hard-coded logic.
+The goal of the project is to demonstrate the design of **autonomous agents coordinated through orchestration**, rather than static or hard-coded control flow.
 
 ## What the System Does
-
 - Parses and normalizes raw product data
-- Dynamically generates categorized user questions
+- Generates categorized user questions dynamically
 - Builds reusable content logic blocks
-- Assembles FAQ, product, and comparison pages
-- Outputs clean structured JSON files for downstream use
+- Assembles FAQ, Product, and Comparison pages
+- Outputs clean JSON files for downstream consumption
 
 ## Architecture
+The system is implemented using an **Agentic AI design pattern** where each agent is responsible for a single capability:
 
-The system follows an agentic AI design pattern where each agent is responsible for a single, well-defined capability:
-
-- Data Parser Agent
-- Question Generator Agent
+- Data Parsing Agent
+- Question Generation Agent
 - Content Logic Agent
 - Template Assembly Agent
 
-Agents are independent, modular, and reusable.  
-They do not directly invoke one another or manage execution order.
+Agents are **independent, modular, and reusable**.  
+They do not directly invoke one another.
 
 ## Agentic AI & Orchestration Design
 
-This project implements a true multi-agent, agentic AI architecture.
+This project implements a **true agentic AI system**.
 
 Each agent:
-
-- Operates autonomously
+- Is autonomous
 - Has a single responsibility
-- Works on a shared context object
-- Is unaware of other agents and execution order
+- Operates on a shared context
+- Is unaware of execution order or other agents
 
-A central **Orchestrator** is responsible for coordinating agent execution. The orchestrator:
+A central **Orchestrator** coordinates agent execution by:
+- Registering agents dynamically
+- Passing a shared context object
+- Managing execution flow externally
 
-- Registers agents dynamically
-- Controls execution flow externally
-- Passes shared context between agents
-
-This design avoids static or manually wired logic and supports extensibility, autonomy, and real-world agentic system behavior.
+This architecture avoids static or manually wired logic and enables extensibility, autonomy, and real-world agentic behavior.
 
 ## How to Run
+```bash```
+python main.py
+## Orchestration Architecture
+
+This system follows a true multi-agent design with an explicit orchestration layer.
+
+Each agent is an autonomous module with a single responsibility and a shared interface.
+Agents do not invoke each other directly and are unaware of execution order.
+
+A dedicated Orchestrator coordinates agent execution by:
+- Registering independent agents dynamically
+- Managing execution order externally
+- Passing a shared context object between agents
+
+This approach avoids hard-coded or static control flow and enables modular, extensible agent coordination aligned with real-world agentic system principles.
 
