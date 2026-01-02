@@ -1,38 +1,18 @@
-class TemplateAgent:
-    def __init__(self, product_data, questions, content_blocks):
-        self.product = product_data
-        self.questions = questions
-        self.blocks = content_blocks
+from agents.base_agent import BaseAgent
+import json
+import os
 
-    def generate_faq_page(self):
-        faq_items = []
+class TemplateAgent(BaseAgent):
+    def __init__(self):
+        super().__init__("TemplateAgent")
 
-        for category, qs in self.questions.items():
-            for q in qs[:1]:
-                faq_items.append({
-                    "category": category,
-                    "question": q,
-                    "answer": "Answer generated from product data"
-                })
+    def run(self, context):
+        os.makedirs("outputs", exist_ok=True)
 
-        return {
-            "page_type": "FAQ",
-            "product_name": self.product["name"],
-            "faqs": faq_items
-        }
+        with open("outputs/product_page.json", "w") as f:
+            json.dump(context["content_blocks"], f, indent=2)
 
-    def generate_product_page(self):
-        return {
-            "page_type": "Product",
-            "overview": self.blocks["overview"],
-            "benefits": self.blocks["benefits"],
-            "usage": self.blocks["usage"],
-            "safety": self.blocks["safety"],
-            "price": self.blocks["price"]
-        }
+        with open("outputs/faq.json", "w") as f:
+            json.dump(context["questions"], f, indent=2)
 
-    def generate_comparison_page(self):
-        return {
-            "page_type": "Comparison",
-            "comparison": self.blocks["comparison"]
-        }
+        return context
