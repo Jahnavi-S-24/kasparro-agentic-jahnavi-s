@@ -44,7 +44,8 @@ This architecture avoids static or manually wired logic and enables extensibilit
 
 ## How to Run
 ```bash
-python main.py```
+python main.py
+```
 ## Orchestration Architecture
 
 This system follows a true multi-agent design with an explicit orchestration layer.
@@ -58,5 +59,6 @@ A dedicated Orchestrator coordinates agent execution by:
 - Passing a shared context object between agents
 
 This approach avoids hard-coded or static control flow and enables modular, extensible agent coordination aligned with real-world agentic system principles.
+
 
 
