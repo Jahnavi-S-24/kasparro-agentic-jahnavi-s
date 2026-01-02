@@ -1,16 +1,21 @@
-class DataParserAgent:
-    def __init__(self, raw_product_data):
-        self.raw_data = raw_product_data
+from agents.base_agent import BaseAgent
 
-    def parse(self):
-        parsed_data = {
-            "name": self.raw_data.get("product_name"),
-            "concentration": self.raw_data.get("concentration"),
-            "skin_type": self.raw_data.get("skin_type"),
-            "ingredients": self.raw_data.get("key_ingredients"),
-            "benefits": self.raw_data.get("benefits"),
-            "usage": self.raw_data.get("how_to_use"),
-            "side_effects": self.raw_data.get("side_effects"),
-            "price": self.raw_data.get("price")
+class DataParserAgent(BaseAgent):
+    def __init__(self):
+        super().__init__("DataParserAgent")
+
+    def run(self, context):
+        raw = context["raw_product_data"]
+
+        context["product"] = {
+            "name": raw.get("product_name"),
+            "concentration": raw.get("concentration"),
+            "skin_type": raw.get("skin_type"),
+            "ingredients": raw.get("key_ingredients"),
+            "benefits": raw.get("benefits"),
+            "usage": raw.get("how_to_use"),
+            "side_effects": raw.get("side_effects"),
+            "price": raw.get("price")
         }
-        return parsed_data
+
+        return context
