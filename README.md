@@ -24,3 +24,18 @@ Agents are connected through a clear orchestration flow.
 ## How to Run
 ```bash
 python main.py
+## Agentic System Design
+
+This project implements a true multi-agent architecture.
+
+Each agent is an autonomous unit with a single responsibility and a shared interface (`BaseAgent`).
+Agents do not call each other and are unaware of execution order.
+
+A central Orchestrator dynamically coordinates agent execution by:
+- Registering independent agents
+- Passing a shared context object
+- Controlling execution flow externally
+
+This design ensures agent autonomy, modularity, and extensibility, aligning with real-world agentic system principles.
+
+
