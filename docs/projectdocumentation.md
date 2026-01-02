@@ -98,3 +98,17 @@ Each output is structured, predictable, and suitable for downstream automation o
 ## 6. Conclusion
 
 This project demonstrates a production-style agentic system that emphasizes system design, modularity, and maintainability. The architecture is extensible and can easily support additional products, agents, or content templates in the future.
+## Agentic AI Orchestration Architecture
+
+This system is designed as a true multi-agent, agentic AI architecture.
+
+Each agent is an autonomous module with a single responsibility and a shared interface.
+Agents do not invoke one another directly and are unaware of execution order.
+
+A dedicated Orchestrator coordinates agent execution by:
+- Dynamically registering independent agents
+- Managing execution flow externally
+- Passing a shared context object between agents
+
+This design avoids static or manually wired control flow and supports extensibility, autonomy, and real-world agentic system behavior.
+
